@@ -1,7 +1,4 @@
-numpy==1.21.0
-pandas==1.3.0
-h5py==3.3.0
-pytables==3.6.0
-requests==2.26.0
 streamlit==1.0.0
-
+pandas==1.3.0
+requests==2.26.0
+h5netcdf==0.12.2
