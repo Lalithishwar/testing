@@ -1,6 +1,3 @@
 streamlit
 pandas
-pickle
-requests
-concurrent.futures
-ThreadPoolExecutor
+
