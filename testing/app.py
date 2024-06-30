@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import h5py
+import h5netcdf
 import requests
 from concurrent.futures import ThreadPoolExecutor
 
@@ -64,9 +64,9 @@ def fetch_movie_data(movie_title):
     imdb_url = fetch_imdb_url(movie_title)
     return movie_title, poster, imdb_url
 
-# Load movie data and similarity matrix from HDF5 files
+# Load movie data and similarity matrix from HDF5 files using h5netcdf
 movies = pd.read_hdf('movies.h5', key='movies')
-with h5py.File('similarity.h5', 'r') as hf:
+with h5netcdf.File('similarity.h5', 'r') as hf:
     similarity = hf['similarity'][:]
 
 # Add custom CSS for styling
@@ -150,4 +150,3 @@ if st.button('Recommend'):
                 st.image(poster)
             else:
                 st.text("Poster not found")  # Indicate missing poster
-
